@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Courses by Department</h2>
+<p>Select a department to view all courses offered.</p>
+
+<form method="POST" action="{{ url_for('courses_by_department') }}" class="mb-4">
+  <div class="mb-3">
+    <label for="dept_id" class="form-label">Department:</label>
+    <select name="dept_id" id="dept_id" class="form-select" required>
+      <option value="">-- Select Department --</option>
+      {% for dept in departments %}
+      <option value="{{ dept.dept_id }}">{{ dept.dept_name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">View Courses</button>
+</form>
+
+{% if courses %}
+<h3>Courses</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Course Code</th>
+      <th>Title</th>
+      <th>Credits</th>
+      <th>Instructor</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for course in courses %}
+    <tr>
+      <td>{{ course.course_code }}</td>
+      <td>{{ course.title }}</td>
+      <td>{{ course.credits }}</td>
+      <td>{{ course.instructor_name }}</td>
+      <td>{{ course.description }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}

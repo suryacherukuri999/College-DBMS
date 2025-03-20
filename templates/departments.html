@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Departments</h2>
+<p>View all departments and their associated statistics.</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Department Name</th>
+            <th>Location</th>
+            <th>Established</th>
+            <th>Instructors</th>
+            <th>Courses</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dept in departments %}
+        <tr>
+            <td>{{ dept.dept_id }}</td>
+            <td>{{ dept.dept_name }}</td>
+            <td>{{ dept.location }}</td>
+            <td>{{ dept.established }}</td>
+            <td>{{ dept.num_instructors }}</td>
+            <td>{{ dept.num_courses }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="mt-4">College Database Management System (CSCE 608)</h1>
+    <p class="lead">Welcome to the College Database Management System. Use the navigation menu to explore the database.</p>
+    
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Departments</h5>
+                    <p class="card-text">View all departments and their associated statistics.</p>
+                    <a href="/departments" class="btn btn-primary">View Departments</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Courses</h5>
+                    <p class="card-text">Browse courses by department.</p>
+                    <a href="/courses_by_department" class="btn btn-primary">View Courses</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Instructors</h5>
+                    <p class="card-text">Search and view instructor information.</p>
+                    <a href="/instructor_info" class="btn btn-primary">Find Instructors</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Student Enrollment</h5>
+                    <p class="card-text">Enroll students in courses.</p>
+                    <a href="/student_enrollment" class="btn btn-primary">Enrollment</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Department Statistics</h5>
+                    <p class="card-text">View advanced statistics about departments.</p>
+                    <a href="/department_statistics" class="btn btn-primary">Statistics</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

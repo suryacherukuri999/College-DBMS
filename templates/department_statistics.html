@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Department Statistics</h2>
+<p>Advanced statistics on departments, enrollments, and grades.</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th>Instructors</th>
+      <th>Courses</th>
+      <th>Students</th>
+      <th>Average GPA</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stat in statistics %}
+    <tr>
+      <td>{{ stat.dept_name }}</td>
+      <td>{{ stat.num_instructors }}</td>
+      <td>{{ stat.num_courses }}</td>
+      <td>{{ stat.num_students }}</td>
+      <td>{{ "%.2f"|format(stat.avg_gpa or 0) }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
