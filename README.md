@@ -1,19 +1,25 @@
-College Database Management System
+# College Database Management System
+
 A comprehensive database management system for a college that tracks departments, instructors, courses, students, and enrollments.
 
-Project Description
+## Project Description
+
 This database system manages the academic structure of a college, focusing on the relationships between departments, instructors, courses, and students. It enables the college to manage course offerings, track instructor workloads, maintain student enrollment records, and organize departmental structures efficiently. The project uses Python, Flask, and MySQL, and it follows best practices in relational database design and normalization.
 
-Requirements
-Python 3.8+
-MySQL or MariaDB
-Flask
-mysql-connector-python
-Faker (for data generation)
-python-dotenv (for environment variable management)
+## Requirements
 
-Project Structure
-Here’s an example of what your folder might look like in Visual Studio Code:
+- Python 3.8+
+- MySQL or MariaDB
+- Flask
+- mysql-connector-python
+- Faker (for data generation)
+- python-dotenv (for environment variable management)
+
+## Project Structure
+
+Here's an example of what your folder might look like in Visual Studio Code:
+
+```
 COLLEGE-DBMS/
 ├── app.py               # Main Flask application
 ├── app.sh               # Bash script to automate setup and launch
@@ -35,34 +41,66 @@ COLLEGE-DBMS/
     ├── index.html
     ├── instructor_info.html
     └── student_enrollment.html
+```
 
-Installation and Setup
-1. Set Up a Virtual Environment
+## Installation and Setup
+
+### 1. Set Up a Virtual Environment
+
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-2. Install Dependencies
+```
+
+### 2. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-3. Configure Your Database Settings
-Create a .env file in the project root with variables similar to these:
+```
+
+### 3. Configure Your Database Settings
+
+Create a `.env` file in the project root with variables similar to these:
+
+```
 DB_HOST=localhost
 DB_USER=dbuser
 DB_PASSWORD=Security@137
 DB_NAME=college_db
 SECRET_KEY=some_random_secret_key
-If you’re on a system that requires a custom socket path, add:
+```
+
+If you're on a system that requires a custom socket path, add:
+
+```
 DB_SOCKET=/var/run/mysqld/mysqld.sock
+```
+
 (Adjust the socket path as necessary.)
-4. Use app.sh to Automate Setup
-The app.sh script simplifies the process of generating data, creating/loading the database, and launching the Flask app. Before running it, make sure the credentials in your .env or the script itself match your MySQL setup. Then run:
+
+### 4. Use app.sh to Automate Setup
+
+The `app.sh` script simplifies the process of generating data, creating/loading the database, and launching the Flask app. Before running it, make sure the credentials in your `.env` or the script itself match your MySQL setup. Then run:
+
+```bash
 chmod +x app.sh
 ./app.sh
-What app.sh does:
-Removes old CSV files (so you start fresh).
-Generates sample data by calling python data_generator.py.
-Creates the database and loads schema via create_database.sql.
-Loads data from the newly generated CSV files by calling load_data.py.
-Starts the Flask application (app.py).
-6. Access the Application
-Once app.sh completes, the Flask server should be running. Open your web browser and navigate to:
+```
+
+#### What app.sh does:
+
+- Removes old CSV files (so you start fresh).
+- Generates sample data by calling `python data_generator.py`.
+- Creates the database and loads schema via `create_database.sql`.
+- Loads data from the newly generated CSV files by calling `load_data.py`.
+- Starts the Flask application (`app.py`).
+
+### 5. Access the Application
+
+Once `app.sh` completes, the Flask server should be running. Open your web browser and navigate to:
+
+```
 http://localhost:5000
-You’ll see the homepage of the College Database Management System. From there, you can explore departments, courses, instructors, and enroll students via the interface.
+```
+
+You'll see the homepage of the College Database Management System. From there, you can explore departments, courses, instructors, and enroll students via the interface.
