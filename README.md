@@ -9,7 +9,7 @@ This database system manages the academic structure of a college, focusing on th
 ## Requirements
 
 - Python 3.8+
-- MySQL or MariaDB
+- MySQL
 - Flask
 - mysql-connector-python
 - Faker (for data generation)
